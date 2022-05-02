@@ -1,7 +1,4 @@
 #!/bin/bash
-projectName=$1
-reportFile=$2
-varDate=$(date +%c)
 rm results.jtl
 JMETERPLUGINSCMD=JMeterPluginsCMD.sh
 # run jmeter and produce a JTL csv report
