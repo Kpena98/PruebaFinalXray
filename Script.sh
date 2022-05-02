@@ -2,11 +2,11 @@
 projectName=$1
 reportFile=$2
 varDate=$(date +%c)
-rm $reportFile
+rm results.jtl
 JMETERPLUGINSCMD=JMeterPluginsCMD.sh
 # run jmeter and produce a JTL csv report
 rm -R dashboard/
-jmeter -n -t  $WORKSPACE/hb_0324 -l $WORKSPACE/results.jtl -e -o dashboard
+jmeter -n -t  $WORKSPACE/hb_0324.jmx -l $WORKSPACE/results.jtl -e -o dashboard
 
 # process JTL and covert it to a synthesis report as CSV
 $JMETERPLUGINSCMD --generate-csv synthesis_results.csv --input-jtl results.jtl --plugin-type SynthesisReport
