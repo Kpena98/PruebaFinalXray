@@ -6,7 +6,7 @@ rm $reportFile
 JMETERPLUGINSCMD=JMeterPluginsCMD.sh
 # run jmeter and produce a JTL csv report
 rm -R dashboard/
-jmeter -n -t  $WORKSPACE/$projectName -l $WORKSPACE/$reportFile -e -o dashboard
+jmeter -n -t  $WORKSPACE/hb_0324 -l $WORKSPACE/results.jtl -e -o dashboard
 
 # process JTL and covert it to a synthesis report as CSV
 $JMETERPLUGINSCMD --generate-csv synthesis_results.csv --input-jtl results.jtl --plugin-type SynthesisReport
